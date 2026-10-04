@@ -23,6 +23,6 @@ This project is a population reporting system developed as part of the SET9803 D
 - ## Development
 
 The project follows GitFlow with
-'master'
-'develop'
-'release'
+- 'master'
+- 'develop'
+- 'release'
