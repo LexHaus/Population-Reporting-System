@@ -13,7 +13,7 @@ This project is a population reporting system developed as part of the SET9803 D
 - 40857660 Alexander Siegel
 - 40832973 Auguste Williams
 
-- ## Tools
+## Tools
 - Java
 - IntelliJ
 - Maven
