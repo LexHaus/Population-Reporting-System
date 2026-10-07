@@ -1,6 +1,10 @@
 # Population-Reporting-System
 SET9803 DevOps Group Project Assessment
 
+## Report work in progress
+
+- [Language report: query, user story and test instructions](reports/languages/README.md)
+
 ## Project Overview
 
 This project is a population reporting system developed as part of the SET9803 DevOps module.
