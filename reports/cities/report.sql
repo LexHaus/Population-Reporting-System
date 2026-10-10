@@ -86,3 +86,19 @@ FROM city
               ON city.CountryCode = country.Code
 ORDER BY city.Population DESC
     LIMIT 10;
+
+-- US13 - View Top N cities in a continent by population
+-- Displays city name, country, district and population
+-- for the Top N populated cities in a selected continent.
+
+SELECT
+    city.Name AS name,
+    country.Name AS country,
+    city.District AS district,
+    city.Population AS population
+FROM city
+         JOIN country
+              ON city.CountryCode = country.Code
+WHERE country.Continent = 'Europe'
+ORDER BY city.Population DESC
+    LIMIT 10;
