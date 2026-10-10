@@ -37,3 +37,35 @@ Results are ordered from the largest city population to the smallest.
 ### Status
 
 US07 implementation started. SQL query prepared. Database testing and application integration are still pending.
+
+---
+
+## US08 - View all cities in a continent by population
+
+### User Story
+
+As a user, I want to view all cities in a continent organized by population from largest to smallest, so that I can compare the populations of cities within a continent.
+
+### Acceptance Criteria
+
+- The system displays all cities in the selected continent.
+- Cities are organized from largest population to smallest population.
+- The report displays:
+  - name
+  - country
+  - district
+  - population
+
+### SQL Query
+
+The SQL query for this report is located in `report.sql`.
+
+The query joins the `city` and `country` tables and filters cities by continent.
+
+### Expected Output
+
+The report will display the following columns:
+
+`name | country | district | population`
+
+The results are ordered by population from largest to smallest.
