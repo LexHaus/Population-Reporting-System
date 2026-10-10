@@ -283,3 +283,34 @@ The report will display the following columns:
 `name | country | district | population`
 
 The results contain the Top N cities in the selected country ordered by population from largest to smallest.
+
+# US16 - View Top N cities in a district by population
+
+## User Story
+
+As a user, I want to view the Top N populated cities in a district, so that I can compare the largest cities within a selected district.
+
+## Acceptance Criteria
+
+- The user can specify the number N.
+- The system displays the Top N populated cities in the selected district.
+- Cities are organized from largest population to smallest population.
+- The report displays:
+  - name
+  - country
+  - district
+  - population
+
+## SQL Query
+
+The SQL query for this report is located in `report.sql`.
+
+The query joins the `city` and `country` tables, filters cities by district, orders them by population from largest to smallest, and limits the results to N cities.
+
+## Expected Output
+
+The report will display the following columns:
+
+`name | country | district | population`
+
+The results contain the Top N cities in the selected district ordered by population from largest to smallest.
