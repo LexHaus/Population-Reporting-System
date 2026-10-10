@@ -118,3 +118,19 @@ FROM city
 WHERE country.Region = 'Western Europe'
 ORDER BY city.Population DESC
     LIMIT 10;
+
+-- US15 - View Top N cities in a country by population
+-- Displays city name, country, district and population
+-- for the Top N populated cities in a selected country.
+
+SELECT
+    city.Name AS name,
+    country.Name AS country,
+    city.District AS district,
+    city.Population AS population
+FROM city
+         JOIN country
+              ON city.CountryCode = country.Code
+WHERE country.Name = 'United States'
+ORDER BY city.Population DESC
+    LIMIT 10;
