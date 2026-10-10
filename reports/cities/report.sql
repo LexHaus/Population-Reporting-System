@@ -56,3 +56,18 @@ FROM city
               ON city.CountryCode = country.Code
 WHERE country.Name = 'United States'
 ORDER BY city.Population DESC;
+
+-- US11 - View all cities in a district by population
+-- Displays city name, country, district and population
+-- for cities in a selected district, ordered largest to smallest.
+
+SELECT
+    city.Name AS name,
+    country.Name AS country,
+    city.District AS district,
+    city.Population AS population
+FROM city
+         JOIN country
+              ON city.CountryCode = country.Code
+WHERE city.District = 'California'
+ORDER BY city.Population DESC;
