@@ -99,3 +99,33 @@ The report will display the following columns:
 `name | country | district | population`
 
 The results are ordered by population from largest to smallest.
+
+## US10 - View all cities in a country by population
+
+### User Story
+
+As a user, I want to view all cities in a country organized by population from largest to smallest, so that I can compare the populations of cities within a country.
+
+### Acceptance Criteria
+
+- The system displays all cities in the selected country.
+- Cities are organized from largest population to smallest population.
+- The report displays:
+  - name
+  - country
+  - district
+  - population
+
+### SQL Query
+
+The SQL query for this report is located in `report.sql`.
+
+The query joins the `city` and `country` tables and filters cities by country.
+
+### Expected Output
+
+The report will display the following columns:
+
+`name | country | district | population`
+
+The results are ordered by population from largest to smallest.

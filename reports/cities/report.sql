@@ -41,3 +41,18 @@ FROM city
               ON city.CountryCode = country.Code
 WHERE country.Region = 'Western Europe'
 ORDER BY city.Population DESC;
+
+-- US10 - View all cities in a country by population
+-- Displays city name, country, district and population
+-- for cities in a selected country, ordered largest to smallest.
+
+SELECT
+    city.Name AS name,
+    country.Name AS country,
+    city.District AS district,
+    city.Population AS population
+FROM city
+         JOIN country
+              ON city.CountryCode = country.Code
+WHERE country.Name = 'United States'
+ORDER BY city.Population DESC;
