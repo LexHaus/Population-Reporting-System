@@ -221,3 +221,34 @@ The report will display the following columns:
 `name | country | district | population`
 
 The results contain the Top N cities in the selected continent ordered by population from largest to smallest.
+
+# US14 - View Top N cities in a region by population
+
+## User Story
+
+As a user, I want to view the Top N populated cities in a region, so that I can compare the largest cities within a selected region.
+
+## Acceptance Criteria
+
+- The user can specify the number N.
+- The system displays the Top N populated cities in the selected region.
+- Cities are organized from largest population to smallest population.
+- The report displays:
+  - name
+  - country
+  - district
+  - population
+
+## SQL Query
+
+The SQL query for this report is located in `report.sql`.
+
+The query joins the `city` and `country` tables, filters cities by region, orders them by population from largest to smallest, and limits the results to N cities.
+
+## Expected Output
+
+The report will display the following columns:
+
+`name | country | district | population`
+
+The results contain the Top N cities in the selected region ordered by population from largest to smallest.
