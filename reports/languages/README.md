@@ -1,11 +1,8 @@
 # Language population report
 
-Status: SQL and standalone calculation tests prepared. The query ran successfully
-against the official World sample on local MariaDB 12.3.2 on 7 October 2026.
-Java integration was verified on 13 October 2026 using the team's World SQL dump,
-MySQL Connector/J 8.4.0 and an isolated MariaDB server. Verification on the team's
-MySQL 8.4 Docker service remains pending;
-do not mark the assessment requirement complete.
+Status: Implemented, tested and integrated into develop. Final verification on
+13 October 2026 used the Java 17 application container and MySQL 8.4.11. All five
+results exactly matched the saved Java output; all nine tests passed.
 
 ## User story
 
@@ -100,13 +97,13 @@ test database. It creates tables: do not load it into the real World database.
 
 - [x] Define the user story and acceptance criteria.
 - [x] Prepare the report query and synthetic test cases.
-- [ ] Confirm Java version, package layout and shared database connection with the team.
-- [ ] Execute the query against the team's supplied World database.
+- [x] Confirm Java version, package layout and shared database connection with the team.
+- [x] Execute the query against the team's supplied World database.
 - [x] Add a Java result model and repository method using the shared connection.
 - [x] Format console output and handle database failures clearly.
-- [ ] Add Java/MySQL integration tests to the shared Maven build.
-- [ ] Capture actual application output and update the assessment evidence table.
-- [ ] Review and merge into develop, following the team's release process.
+- [x] Add Java/MySQL integration tests to the shared Maven build.
+- [x] Capture actual application output and update the assessment evidence table.
+- [x] Review and merge into develop, following the team's release process.
 
 Suggested sprint goal: demonstrate an accurate language report from the shared
 World database. Tracked in GitHub issue #19 (US32).
@@ -129,7 +126,9 @@ print as N/A. Database/report errors exit with code 1; invalid arguments with 2.
 
 With the team's Compose database already ready, build the JAR and app image, then
 run `docker compose run --rm app languages` from the nested application directory.
-The Docker/MySQL 8.4 path has not yet been executed locally.
+The Docker/MySQL 8.4 path passed on 13 October 2026 (server 8.4.11).
+The host port was overridden to `127.0.0.1:33306:3306` because port 3306 was
+occupied; app-to-database networking and the repository images were unchanged.
 
 Two Java formatting tests run in the normal Maven build. To also run the read-only
 integration test against the supplied, unmodified World dataset, set
@@ -138,5 +137,6 @@ integration test against the supplied, unmodified World dataset, set
 their ordering, percentages and that the shared connection stays open.
 
 Actual packaged Java output is saved in [java-world-output.txt](java-world-output.txt).
-This was verified locally on MariaDB; an application screenshot and testing on the
-team's MySQL service remain outstanding.
+The [screenshot](evidence/java-report.jpg) records the earlier MariaDB run.
+The [final Docker/MySQL output](evidence/docker-mysql-output.txt) matches it exactly.
+The root README contains the verified language requirement and evidence links.
