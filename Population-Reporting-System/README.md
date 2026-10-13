@@ -15,6 +15,7 @@ The database import runs only when the Docker data volume is first created.
 Changing the SQL dump or password does not reinitialise an existing volume.
 Keep local passwords in the ignored `.env` file.
 
-The container setup targets MySQL 8.4. Java packaging and local JDBC execution
-were checked during review; a full Docker run remains to be verified on a
-machine with Docker installed.
+The container setup targets MySQL 8.4. The language application container and
+JDBC integration test passed against MySQL 8.4.11 on 13 October 2026. The test
+used host port 33306 because 3306 was occupied; internal networking was unchanged.
+Run `docker compose run --rm app languages` to display the language report.
