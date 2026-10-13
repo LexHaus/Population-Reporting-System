@@ -1,4 +1,3 @@
-
 package org.example;
 
 import java.sql.Connection;
@@ -43,6 +42,7 @@ public class Main {
         } catch (Exception e) {
             System.err.println("Could not connect to the World database:");
             e.printStackTrace();
+            System.exit(1);
         }
     }
 }
