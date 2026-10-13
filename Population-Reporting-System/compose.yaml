@@ -1,0 +1,27 @@
+
+services:
+  database:
+    image: mysql:8.4
+    container_name: world-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: world
+    ports:
+      - "3306:3306"
+    volumes:
+      - world-data:/var/lib/mysql
+      - ./database/world.sql:/docker-entrypoint-initdb.d/world.sql:ro
+
+  app:
+    build: .
+    depends_on:
+      - database
+    environment:
+      DB_HOST: database
+      DB_PORT: 3306
+      DB_NAME: world
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD}
+
+volumes:
+  world-data:

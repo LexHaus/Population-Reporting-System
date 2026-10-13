@@ -2,7 +2,9 @@
 
 Status: SQL and standalone calculation tests prepared. The query ran successfully
 against the official World sample on local MariaDB 12.3.2 on 7 October 2026.
-Java integration and verification on the team's MySQL server remain pending;
+Java integration was verified on 13 October 2026 using the team's World SQL dump,
+MySQL Connector/J 8.4.0 and an isolated MariaDB server. Verification on the team's
+MySQL 8.4 Docker service remains pending;
 do not mark the assessment requirement complete.
 
 ## User story
@@ -100,12 +102,41 @@ test database. It creates tables: do not load it into the real World database.
 - [x] Prepare the report query and synthetic test cases.
 - [ ] Confirm Java version, package layout and shared database connection with the team.
 - [ ] Execute the query against the team's supplied World database.
-- [ ] Add a Java result model and repository method using the shared connection.
-- [ ] Format console output and handle database failures clearly.
+- [x] Add a Java result model and repository method using the shared connection.
+- [x] Format console output and handle database failures clearly.
 - [ ] Add Java/MySQL integration tests to the shared Maven build.
 - [ ] Capture actual application output and update the assessment evidence table.
 - [ ] Review and merge into develop, following the team's release process.
 
 Suggested sprint goal: demonstrate an accurate language report from the shared
-World database. This file is a local planning artifact; it has not created a
-GitHub issue or project-board item.
+World database. Tracked in GitHub issue #19 (US32).
+
+## Running the Java report
+
+The application lives in the nested `Population-Reporting-System` directory,
+matching the team's DevOps branch. From the repository root:
+
+```sh
+mvn -f Population-Reporting-System/pom.xml package
+java -jar Population-Reporting-System/target/Population-Reporting-System-1.0-SNAPSHOT.jar languages
+```
+
+Set `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER` and `DB_PASSWORD` for your database.
+The existing default/countries option still prints the starter country report.
+The language SQL is packaged from `reports/languages/report.sql`, so there is one
+query source. Decimal precision is retained until display; absent percentages
+print as N/A. Database/report errors exit with code 1; invalid arguments with 2.
+
+With the team's Compose database already ready, build the JAR and app image, then
+run `docker compose run --rm app languages` from the nested application directory.
+The Docker/MySQL 8.4 path has not yet been executed locally.
+
+Two Java formatting tests run in the normal Maven build. To also run the read-only
+integration test against the supplied, unmodified World dataset, set
+`WORLD_TEST_URL` to its JDBC URL along with `DB_USER` and `DB_PASSWORD`, then run
+`mvn -f Population-Reporting-System/pom.xml test`. It checks all five estimates,
+their ordering, percentages and that the shared connection stays open.
+
+Actual packaged Java output is saved in [java-world-output.txt](java-world-output.txt).
+This was verified locally on MariaDB; an application screenshot and testing on the
+team's MySQL service remain outstanding.
