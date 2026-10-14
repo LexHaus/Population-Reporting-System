@@ -19,3 +19,8 @@ The container setup targets MySQL 8.4. The language application container and
 JDBC integration test passed against MySQL 8.4.11 on 13 October 2026. The test
 used host port 33306 because 3306 was occupied; internal networking was unchanged.
 Run `docker compose run --rm app languages` to display the language report.
+
+City reports are also available: run `docker compose run --rm app cities US12`
+after rebuilding the app image. `cities` defaults to the worldwide Top 10;
+US07 through US16 select the existing city queries. See
+[city report instructions](../reports/cities/README.md) for filters and Java usage.

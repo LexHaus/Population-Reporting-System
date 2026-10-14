@@ -29,6 +29,7 @@
 
     <build>
         <resources>
+            <resource><directory>../reports/cities</directory><includes><include>report.sql</include></includes><targetPath>reports/cities</targetPath></resource>
             <resource><directory>../reports/languages</directory><includes><include>report.sql</include></includes><targetPath>reports/languages</targetPath></resource>
         </resources>
         <plugins>

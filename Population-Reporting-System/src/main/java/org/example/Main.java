@@ -9,9 +9,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        if (args.length > 1 || (args.length == 1 && !args[0].equals("languages") && !args[0].equals("countries"))) {
-            System.err.println("Usage: java -jar app.jar [countries|languages]");
+        boolean cities = args.length > 0 && args[0].equals("cities");
+        if (args.length > (cities ? 2 : 1) || (args.length > 0 && !cities && !args[0].equals("languages") && !args[0].equals("countries"))) {
+            System.err.println("Usage: java -jar app.jar [countries|languages|cities [US07..US16]]");
             System.exit(2);
+        }
+        String cityId = cities && args.length == 2 ? args[1] : "US12";
+        if (cities) {
+            try {
+                CityReport.reportNumber(cityId);
+            } catch (IllegalArgumentException e) {
+                System.err.println(e.getMessage());
+                System.exit(2);
+            }
         }
         String host = System.getenv().getOrDefault("DB_HOST", "localhost");
         String port = System.getenv().getOrDefault("DB_PORT", "3306");
@@ -30,6 +40,10 @@ public class Main {
 
         try (Connection connection =
                      DriverManager.getConnection(url, username, password)) {
+            if (cities) {
+                CityReport.print(CityReport.fetch(connection, cityId), cityId, System.out);
+                return;
+            }
             if (args.length == 1 && args[0].equals("languages")) {
                 LanguageReport.print(LanguageReport.fetch(connection), System.out);
                 return;
