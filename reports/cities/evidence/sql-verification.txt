@@ -1,0 +1,163 @@
+City report SQL verification — local World MySQL database
+All 10 queries executed. Columns and descending population ordering verified.
+All Top 10 reports match the first 10 rows of their corresponding full report.
+
+
+US07 - View all cities worldwide by population
+Rows: 4079
+Preview (first 10 rows):
+name	country	district	population
+Mumbai (Bombay)	India	Maharashtra	10500000
+Seoul	South Korea	Seoul	9981619
+São Paulo	Brazil	São Paulo	9968485
+Shanghai	China	Shanghai	9696300
+Jakarta	Indonesia	Jakarta Raya	9604900
+Karachi	Pakistan	Sindh	9269265
+Istanbul	Turkey	Istanbul	8787958
+Ciudad de México	Mexico	Distrito Federal	8591309
+Moscow	Russian Federation	Moscow (City)	8389200
+New York	United States	New York	8008278
+
+
+US08 - View all cities in a continent by population
+Rows: 841
+Preview (first 10 rows):
+name	country	district	population
+Moscow	Russian Federation	Moscow (City)	8389200
+London	United Kingdom	England	7285000
+St Petersburg	Russian Federation	Pietari	4694000
+Berlin	Germany	Berliini	3386667
+Madrid	Spain	Madrid	2879052
+Roma	Italy	Latium	2643581
+Kyiv	Ukraine	Kiova	2624000
+Paris	France	Île-de-France	2125246
+Bucuresti	Romania	Bukarest	2016131
+Budapest	Hungary	Budapest	1811552
+
+
+US09 - View all cities in a region by population
+Rows: 186
+Preview (first 10 rows):
+name	country	district	population
+Berlin	Germany	Berliini	3386667
+Paris	France	Île-de-France	2125246
+Hamburg	Germany	Hamburg	1704735
+Wien	Austria	Wien	1608144
+Munich [München]	Germany	Baijeri	1194560
+Köln	Germany	Nordrhein-Westfalen	962507
+Marseille	France	Provence-Alpes-Côte	798430
+Amsterdam	Netherlands	Noord-Holland	731200
+Frankfurt am Main	Germany	Hessen	643821
+Essen	Germany	Nordrhein-Westfalen	599515
+
+
+US10 - View all cities in a country by population
+Rows: 274
+Preview (first 10 rows):
+name	country	district	population
+New York	United States	New York	8008278
+Los Angeles	United States	California	3694820
+Chicago	United States	Illinois	2896016
+Houston	United States	Texas	1953631
+Philadelphia	United States	Pennsylvania	1517550
+Phoenix	United States	Arizona	1321045
+San Diego	United States	California	1223400
+Dallas	United States	Texas	1188580
+San Antonio	United States	Texas	1144646
+Detroit	United States	Michigan	951270
+
+
+US11 - View all cities in a district by population
+Rows: 68
+Preview (first 10 rows):
+name	country	district	population
+Los Angeles	United States	California	3694820
+San Diego	United States	California	1223400
+San Jose	United States	California	894943
+San Francisco	United States	California	776733
+Long Beach	United States	California	461522
+Fresno	United States	California	427652
+Sacramento	United States	California	407018
+Oakland	United States	California	399484
+Santa Ana	United States	California	337977
+Anaheim	United States	California	328014
+
+
+US12 - View Top N cities worldwide by population
+Rows: 10
+Preview (first 10 rows):
+name	country	district	population
+Mumbai (Bombay)	India	Maharashtra	10500000
+Seoul	South Korea	Seoul	9981619
+São Paulo	Brazil	São Paulo	9968485
+Shanghai	China	Shanghai	9696300
+Jakarta	Indonesia	Jakarta Raya	9604900
+Karachi	Pakistan	Sindh	9269265
+Istanbul	Turkey	Istanbul	8787958
+Ciudad de México	Mexico	Distrito Federal	8591309
+Moscow	Russian Federation	Moscow (City)	8389200
+New York	United States	New York	8008278
+
+
+US13 - View Top N cities in a continent by population
+Rows: 10
+Preview (first 10 rows):
+name	country	district	population
+Moscow	Russian Federation	Moscow (City)	8389200
+London	United Kingdom	England	7285000
+St Petersburg	Russian Federation	Pietari	4694000
+Berlin	Germany	Berliini	3386667
+Madrid	Spain	Madrid	2879052
+Roma	Italy	Latium	2643581
+Kyiv	Ukraine	Kiova	2624000
+Paris	France	Île-de-France	2125246
+Bucuresti	Romania	Bukarest	2016131
+Budapest	Hungary	Budapest	1811552
+
+
+US14 - View Top N cities in a region by population
+Rows: 10
+Preview (first 10 rows):
+name	country	district	population
+Berlin	Germany	Berliini	3386667
+Paris	France	Île-de-France	2125246
+Hamburg	Germany	Hamburg	1704735
+Wien	Austria	Wien	1608144
+Munich [München]	Germany	Baijeri	1194560
+Köln	Germany	Nordrhein-Westfalen	962507
+Marseille	France	Provence-Alpes-Côte	798430
+Amsterdam	Netherlands	Noord-Holland	731200
+Frankfurt am Main	Germany	Hessen	643821
+Essen	Germany	Nordrhein-Westfalen	599515
+
+
+US15 - View Top N cities in a country by population
+Rows: 10
+Preview (first 10 rows):
+name	country	district	population
+New York	United States	New York	8008278
+Los Angeles	United States	California	3694820
+Chicago	United States	Illinois	2896016
+Houston	United States	Texas	1953631
+Philadelphia	United States	Pennsylvania	1517550
+Phoenix	United States	Arizona	1321045
+San Diego	United States	California	1223400
+Dallas	United States	Texas	1188580
+San Antonio	United States	Texas	1144646
+Detroit	United States	Michigan	951270
+
+
+US16 - View Top N cities in a district by population
+Rows: 10
+Preview (first 10 rows):
+name	country	district	population
+Los Angeles	United States	California	3694820
+San Diego	United States	California	1223400
+San Jose	United States	California	894943
+San Francisco	United States	California	776733
+Long Beach	United States	California	461522
+Fresno	United States	California	427652
+Sacramento	United States	California	407018
+Oakland	United States	California	399484
+Santa Ana	United States	California	337977
+Anaheim	United States	California	328014

@@ -2,6 +2,32 @@
 
 This folder contains the city population reports for the Population Reporting System.
 
+## Running from Java
+
+From the nested `Population-Reporting-System` application directory, run `mvn package`.
+With `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, and `DB_PASSWORD` set for your local
+World database, run:
+
+```sh
+java -jar target/Population-Reporting-System-1.0-SNAPSHOT.jar cities
+java -jar target/Population-Reporting-System-1.0-SNAPSHOT.jar cities US08
+```
+
+`cities` defaults to US12 (worldwide Top 10). Select US07 through US16 explicitly
+to run another existing query. In IntelliJ, run `org.example.Main` with program
+arguments `cities US12` and the same database environment variables.
+For Docker, rebuild the app first, then run `docker compose run --rm app cities US12`.
+
+The current SQL uses fixed filters: Europe, Western Europe, United States, and
+California. Top N reports currently use N=10; user-selectable filters and N remain
+future work. These are historical World sample values, not current populations.
+
+Verified against local MySQL on 14 October 2026: all ten SQL queries ran, and the
+Java JDBC integration check verified counts, descending order, largest cities,
+and matching Top 10 subsets. Six Java tests passed with no skips when
+`WORLD_TEST_URL`, `DB_USER`, and `DB_PASSWORD` were supplied to `mvn package`.
+See [verification evidence](evidence/).
+
 ## US07 - View all cities worldwide by population
 
 ### User Story
@@ -36,7 +62,7 @@ Results are ordered from the largest city population to the smallest.
 
 ### Status
 
-US07 implementation started. SQL query prepared. Database testing and application integration are still pending.
+US07 SQL and Java integration verified against the World sample database.
 
 ---
 
