@@ -1,0 +1,50 @@
+@startuml
+!pragma layout smetana
+left to right direction
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 15
+skinparam ArrowColor #64748B
+skinparam actorBorderColor #15324F
+skinparam actorFontColor #15324F
+skinparam usecaseBorderColor #35658A
+skinparam usecaseBackgroundColor #EFF6FC
+skinparam usecaseFontColor #15324F
+skinparam rectangleBorderColor #15324F
+skinparam rectangleFontColor #15324F
+skinparam nodesep 24
+skinparam ranksep 45
+title Population Reporting System\nUse-case overview • assessment requirements US01–US32
+
+actor "System User\n(organisation staff)" as User
+
+rectangle "Population Reporting System" {
+  usecase "View all countries by population\nUS01–US03\nWorld / continent / region" as Countries
+  usecase "View Top N countries by population\nUS04–US06\nWorld / continent / region" as TopCountries
+  usecase "View all cities by population\nUS07–US11\nWorld / continent / region / country / district" as Cities
+  usecase "View Top N cities by population\nUS12–US16\nWorld / continent / region / country / district" as TopCities
+  usecase "View all capital cities by population\nUS17–US19\nWorld / continent / region" as Capitals
+  usecase "View Top N capital cities by population\nUS20–US22\nWorld / continent / region" as TopCapitals
+  usecase "View population living in / outside cities\nUS23–US25\nEach continent / region / country" as Breakdown
+  usecase "Look up a population total\nUS26–US31\nWorld / continent / region / country / district / city" as Totals
+  usecase "View language speakers and world percentages\nUS32\nChinese / English / Hindi / Spanish / Arabic" as Languages
+}
+
+User -- Countries
+User -- TopCountries
+User -- Cities
+User -- TopCities
+User -- Capitals
+User -- TopCapitals
+User -- Breakdown
+User -- Totals
+User -- Languages
+
+legend bottom
+  **Scope:** intended system, not a completion checklist.
+  Each oval groups related user-story variations; all 32 requirements are covered.
+  Ranked reports sort largest to smallest. Top N is supplied by the user in the target design.
+  The World database is a data source within the solution, not a human actor.
+endlegend
+@enduml
