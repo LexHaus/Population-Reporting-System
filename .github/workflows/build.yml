@@ -1,0 +1,66 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: Population-Reporting-System
+    env:
+      # Disposable CI database only; this is not a production credential.
+      DB_PASSWORD: ci-world-test-password
+      DB_USER: root
+      WORLD_TEST_URL: jdbc:mysql://127.0.0.1:3306/world
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Java 17 and Maven cache
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+          cache-dependency-path: Population-Reporting-System/pom.xml
+      - name: Test language calculations
+        working-directory: .
+        run: python3 -m unittest discover -s tests/languages -v
+      - name: Start and initialise World database
+        run: docker compose up -d --wait --wait-timeout 240 database
+      - name: Build JAR and run unit and JDBC integration tests
+        run: mvn --batch-mode --no-transfer-progress clean verify
+      - name: Build Docker image using default Dockerfile name
+        run: docker build --tag population-reporting-system:ci .
+      - name: Run country, city and language reports in Docker
+        run: |
+          mkdir -p target/report-evidence
+          for report in countries cities languages; do
+            docker run --rm --network host \
+              -e DB_HOST=127.0.0.1 -e DB_PORT=3306 -e DB_NAME=world \
+              -e DB_USER -e DB_PASSWORD \
+              population-reporting-system:ci "$report" | tee "target/report-evidence/$report.txt"
+            test -s "target/report-evidence/$report.txt"
+          done
+      - name: Upload JAR, test results and report evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-and-test-evidence
+          path: |
+            Population-Reporting-System/target/Population-Reporting-System-1.0-SNAPSHOT.jar
+            Population-Reporting-System/target/surefire-reports/
+            Population-Reporting-System/target/report-evidence/
+          if-no-files-found: warn
+      - name: Show database logs on failure
+        if: failure()
+        run: docker compose logs database
+      - name: Clean up CI database
+        if: always()
+        run: docker compose down --volumes
