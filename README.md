@@ -3,6 +3,8 @@ SET9803 DevOps Group Project Assessment
 
 ## Reports
 
+- [System use-case diagram and requirement mapping](use-cases/README.md)
+
 - [Language report: query, user story and test instructions](reports/languages/README.md)
 
 ## Project Overview
