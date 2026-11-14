@@ -1,4 +1,11 @@
 # Population-Reporting-System
+
+[![Build: master](https://github.com/LexHaus/Population-Reporting-System/actions/workflows/build.yml/badge.svg?branch=master&event=push)](https://github.com/LexHaus/Population-Reporting-System/actions/workflows/build.yml?query=branch%3Amaster)
+[![Build: develop](https://github.com/LexHaus/Population-Reporting-System/actions/workflows/build.yml/badge.svg?branch=develop&event=push)](https://github.com/LexHaus/Population-Reporting-System/actions/workflows/build.yml?query=branch%3Adevelop)
+[![Coverage: master](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FLexHaus%2FPopulation-Reporting-System%2Fcoverage-badges%2Fmaster.json&cacheSeconds=300)](https://github.com/LexHaus/Population-Reporting-System/tree/coverage-badges)
+[![Release](https://img.shields.io/github/v/release/LexHaus/Population-Reporting-System?display_name=release)](https://github.com/LexHaus/Population-Reporting-System/releases/latest)
+[![Licence: MIT](https://img.shields.io/github/license/LexHaus/Population-Reporting-System)](LICENSE)
+
 SET9803 DevOps Group Project Assessment
 
 ## Reports
@@ -64,3 +71,22 @@ Open a workflow run to see each step and download `build-and-test-evidence`,
 which contains the JAR, Maven test results and report output. A successful run is
 visible as a green check; integration tests require `WORLD_TEST_URL` and are
 explicitly enabled in this workflow.
+
+### Automatic coverage badge
+
+The coverage badge measures **all Java application lines on `master`**, including
+unit and MySQL integration tests. It is separate from the language-report-only
+coverage and does not include the Python tests.
+
+After a successful push build on `master` (or a manual build of `master`), Actions
+publishes the measured JaCoCo result to the `coverage-badges` branch using its
+built-in repository token. No external coverage account or personal token is
+required. Pull requests and other branches cannot publish the master badge.
+Failed builds retain the last successful measurement; the master build badge
+shows the build status. Badge caching can delay display updates by a few minutes.
+
+The first coverage value becomes available after this workflow reaches `master`
+and passes there. Until then the coverage badge may show unavailable. The
+`master-source.json` file on the badge branch records the measured commit, and
+`jacoco.xml` contains the underlying coverage counters. Download
+`build-and-test-evidence` from the matching run for the full HTML report.
