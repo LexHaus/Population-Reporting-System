@@ -2,6 +2,8 @@ name: Build and test
 
 on:
   push:
+    branches-ignore:
+      - coverage-badges
   pull_request:
   workflow_dispatch:
 
@@ -84,3 +86,57 @@ jobs:
       - name: Clean up CI database
         if: always()
         run: docker compose down --volumes
+
+  publish-coverage:
+    name: Publish master coverage badge
+    needs: verify
+    if: >-
+      github.ref == 'refs/heads/master' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    concurrency:
+      group: master-coverage-badge
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download verified coverage report
+        uses: actions/download-artifact@v4
+        with:
+          name: build-and-test-evidence
+          path: ${{ runner.temp }}/coverage-evidence
+      - name: Generate badge from measured Java coverage
+        env:
+          EVIDENCE: ${{ runner.temp }}/coverage-evidence
+          BADGE_OUTPUT: ${{ runner.temp }}/coverage-badge
+        run: |
+          mapfile -t reports < <(find "$EVIDENCE" -name jacoco.xml -type f)
+          test "${#reports[@]}" -eq 1
+          python3 .github/scripts/coverage_badge.py "${reports[0]}" "$BADGE_OUTPUT" --commit "$GITHUB_SHA"
+      - name: Publish badge data
+        env:
+          BADGE_OUTPUT: ${{ runner.temp }}/coverage-badge
+        run: |
+          git fetch origin master
+          if [ "$(git rev-parse origin/master)" != "$GITHUB_SHA" ]; then
+            echo "A newer master commit exists; leaving publication to its build."
+            exit 0
+          fi
+          if git ls-remote --exit-code --heads origin coverage-badges; then
+            git fetch origin coverage-badges
+            git switch --force-create coverage-badges origin/coverage-badges
+          else
+            git switch --orphan coverage-badges
+          fi
+          cp "$BADGE_OUTPUT/"* .
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add master.json master-source.json jacoco.xml
+          if git diff --cached --quiet; then
+            echo "Coverage badge data is already current."
+          else
+            git commit -m "Update master coverage badge"
+            git push origin HEAD:coverage-badges
+          fi
