@@ -140,3 +140,24 @@ Actual packaged Java output is saved in [java-world-output.txt](java-world-outpu
 The [screenshot](evidence/java-report.jpg) records the earlier MariaDB run.
 The [final Docker/MySQL output](evidence/docker-mysql-output.txt) matches it exactly.
 The root README contains the verified language requirement and evidence links.
+
+## Coverage and additional verification
+
+Run `mvn clean verify` from the application directory. JaCoCo generates an
+interactive HTML report at `target/site/jacoco/index.html` and machine-readable
+XML/CSV alongside it. The report measures all Java application classes; inspect
+`org.example.LanguageReport` for this feature's coverage. Python SQL tests are
+separate and are not included in the Java coverage percentage.
+
+Set `WORLD_TEST_URL`, `DB_USER` and `DB_PASSWORD` to enable the MySQL integration
+tests. Without `WORLD_TEST_URL`, those tests are skipped and the coverage report
+will therefore cover less code. GitHub Actions enables them and uploads the
+coverage report in `build-and-test-evidence`.
+
+Language tests cover display rounding, undefined percentages, empty output,
+large speaker counts, locale-independent formatting and row order. MySQL tests
+also check fractional aggregation, the full world denominator, missing languages,
+alphabetical ties, exclusion of other languages, zero population and empty data.
+Synthetic MySQL data uses a unique disposable schema, removed after the test;
+it does not modify the supplied World tables. The test account needs permission
+to create and drop this test schema (CI uses its disposable MySQL root account).

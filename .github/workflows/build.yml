@@ -36,6 +36,25 @@ jobs:
         run: docker compose up -d --wait --wait-timeout 240 database
       - name: Build JAR and run unit and JDBC integration tests
         run: mvn --batch-mode --no-transfer-progress clean verify
+      - name: Summarise Java coverage
+        run: |
+          python3 - <<'PYCODE'
+          import os
+          import xml.etree.ElementTree as ET
+          root = ET.parse('target/site/jacoco/jacoco.xml').getroot()
+          language = root.find(".//class[@name='org/example/LanguageReport']")
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('## Java test coverage\n\n| Scope | Lines | Branches |\n|---|---:|---:|\n')
+              for name, scope in [('All Java classes', root), ('LanguageReport', language)]:
+                  values = []
+                  for kind in ['LINE', 'BRANCH']:
+                      counter = scope.find(f"counter[@type='{kind}']")
+                      covered, missed = int(counter.get('covered')), int(counter.get('missed'))
+                      total = covered + missed
+                      values.append(f'{covered / total:.1%} ({covered}/{total})' if total else 'N/A')
+                  summary.write(f'| {name} | {values[0]} | {values[1]} |\n')
+              summary.write('\nDownload build-and-test-evidence for the full HTML/XML report. Python tests are separate.\n')
+          PYCODE
       - name: Build Docker image using default Dockerfile name
         run: docker build --tag population-reporting-system:ci .
       - name: Run country, city and language reports in Docker
@@ -56,6 +75,7 @@ jobs:
           path: |
             Population-Reporting-System/target/Population-Reporting-System-1.0-SNAPSHOT.jar
             Population-Reporting-System/target/surefire-reports/
+            Population-Reporting-System/target/site/jacoco/
             Population-Reporting-System/target/report-evidence/
           if-no-files-found: warn
       - name: Show database logs on failure
