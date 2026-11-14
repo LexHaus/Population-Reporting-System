@@ -27,4 +27,29 @@ class LanguageReportTest {
         assertTrue(output.toString().contains("126"));
         assertTrue(output.toString().contains("3.13"));
     }
+
+    @Test void emptyReportStillDisplaysColumnHeadings() {
+        var output = new ByteArrayOutputStream();
+        LanguageReport.print(List.of(), new PrintStream(output));
+        String report = output.toString();
+        assertEquals(2, report.lines().count());
+        assertTrue(report.contains("Estimated speakers"));
+        assertTrue(report.contains("World population (%)"));
+    }
+
+    @Test void formattingIsIndependentOfDefaultLocaleAndKeepsInputOrder() {
+        var previous = java.util.Locale.getDefault();
+        try {
+            java.util.Locale.setDefault(java.util.Locale.GERMANY);
+            var output = new ByteArrayOutputStream();
+            LanguageReport.print(List.of(
+                    new LanguageReport.Row("English", new BigDecimal("12345678901.49"), new BigDecimal("1.2")),
+                    new LanguageReport.Row("Arabic", BigDecimal.ZERO, BigDecimal.ZERO)), new PrintStream(output));
+            var lines = output.toString().lines().toList();
+            assertEquals(List.of("English", "12,345,678,901", "1.20"), List.of(lines.get(2).trim().split("\\s+")));
+            assertEquals(List.of("Arabic", "0", "0.00"), List.of(lines.get(3).trim().split("\\s+")));
+        } finally {
+            java.util.Locale.setDefault(previous);
+        }
+    }
 }
