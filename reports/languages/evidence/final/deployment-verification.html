@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8"><title>Deployment and test verification</title><style>body{margin:0;background:#eef2f6;color:#182434;font:18px system-ui;padding:42px}main{max-width:1100px;margin:auto;background:white;padding:36px;border:1px solid #ced7e1;border-radius:12px}h1{font-size:30px;margin-top:0}p{line-height:1.6}pre{background:#142233;color:#e6f0ff;padding:25px;border-radius:8px;font:14px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}small{color:#536173}a{color:#1854a0}</style><main><h1>Deployment and test verification</h1><p>15 November 2026 · US32 · Java 17 container / MySQL 8.4.11</p><p>Fresh project: language-final-verification. MySQL imported 239 countries, 4,079 cities and 984 language records. Host test port: 33308; containers use database:3306.</p><pre>NAME                   IMAGE       COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+language-final-mysql   mysql:8.4   &quot;docker-entrypoint.s…&quot;   database   29 seconds ago   Up 28 seconds (healthy)   127.0.0.1:33308-&gt;3306/tcp
+
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in org.example.CityReportTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.460 s -- in org.example.LanguageReportIntegrationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.example.LanguageReportTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 s -- in org.example.CityReportIntegrationTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+Ran 6 tests in 0.003s
+
+OK</pre><p>All nine Java tests passed, including real MySQL integration tests. Six Python calculation tests passed.</p><p><small>Source commit: af8357024c650cf4ee69cc04eded579676a1a501<br>Evidence viewer: captured command output, not an application web interface.</small></p></main>

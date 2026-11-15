@@ -161,3 +161,9 @@ alphabetical ties, exclusion of other languages, zero population and empty data.
 Synthetic MySQL data uses a unique disposable schema, removed after the test;
 it does not modify the supplied World tables. The test account needs permission
 to create and drop this test schema (CI uses its disposable MySQL root account).
+
+## Final deployment evidence
+
+See the [15 November verification pack](evidence/final/README.md) for a fresh
+Docker deployment, final screenshots, raw report/test output and reproducible
+commands. All nine Java tests and six Python tests passed.
