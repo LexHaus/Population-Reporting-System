@@ -1,0 +1,14 @@
+{
+  ".github/scripts/report_smoke.py": "ad7bdc312257c34e928fadfa528534ba758ec4eaafd938bcb7ad2b29ff8503b2",
+  "Population-Reporting-System/src/main/java/org/example/CityReport.java": "221cf2e110a1ccc0e85f64fc98e99ee5057f9c8d981577dfab55742d510e19ef",
+  "Population-Reporting-System/src/main/java/org/example/LanguageReport.java": "0432b8c6235e3883292e41fe41b1dbd44192048c74758c5d8b78fb69971f5c66",
+  "Population-Reporting-System/src/main/java/org/example/Main.java": "8eb080a25e0acebaa055374388a29baf36c68e491c0a75b32e0ad5607d9899a7",
+  "Population-Reporting-System/src/main/java/org/example/PopulationReports.java": "158445c9186a6da3379a94e32fb187bf9946366146815c452926a393bb93e844",
+  "Population-Reporting-System/src/main/java/org/example/ReportRequest.java": "ad56673f8fb5e34ea71166ca6f01714b733c3f4035a9cb6eae0bbb3401a80dcf",
+  "Population-Reporting-System/src/test/java/org/example/CityReportIntegrationTest.java": "f8899991ad7c685451dc4360bfc81531b7fd4c8d919d5968e609e60ecf987263",
+  "Population-Reporting-System/src/test/java/org/example/CityReportTest.java": "6dce5054f3cb465a7fc89049e3c8d206493344c7240a447b5089c8219332a372",
+  "Population-Reporting-System/src/test/java/org/example/LanguageReportIntegrationTest.java": "99595fd6c8a97f489a01f0a1e9b18f4e38afa44e2b64d103ff05606ed541cc5e",
+  "Population-Reporting-System/src/test/java/org/example/LanguageReportTest.java": "05e74b2bda7734aaf3192e33e529e60505082607162ab9868937de538aecca4d",
+  "Population-Reporting-System/src/test/java/org/example/PopulationReportsIntegrationTest.java": "7d3d345ee3bc81478ca5bac0b43aab76fcbbabca31c8e370f4791125e6784dd5",
+  "Population-Reporting-System/src/test/java/org/example/ReportRequestTest.java": "83815d453f9ab42860dbbe4b1a8babef8fd7734a08dfd87e8bdfd2f3df5acb54"
+}

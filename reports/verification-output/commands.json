@@ -1,0 +1,328 @@
+[
+  {
+    "requirement": "US01",
+    "arguments": [
+      "report",
+      "US01"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US02",
+    "arguments": [
+      "report",
+      "US02",
+      "--continent",
+      "Asia"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US03",
+    "arguments": [
+      "report",
+      "US03",
+      "--region",
+      "Eastern Asia"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US04",
+    "arguments": [
+      "report",
+      "US04",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US05",
+    "arguments": [
+      "report",
+      "US05",
+      "--continent",
+      "Asia",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US06",
+    "arguments": [
+      "report",
+      "US06",
+      "--region",
+      "Eastern Asia",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US07",
+    "arguments": [
+      "report",
+      "US07"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US08",
+    "arguments": [
+      "report",
+      "US08",
+      "--continent",
+      "Asia"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US09",
+    "arguments": [
+      "report",
+      "US09",
+      "--region",
+      "Eastern Asia"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US10",
+    "arguments": [
+      "report",
+      "US10",
+      "--country",
+      "JPN"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US11",
+    "arguments": [
+      "report",
+      "US11",
+      "--district",
+      "Tokyo-to",
+      "--country",
+      "JPN"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US12",
+    "arguments": [
+      "report",
+      "US12",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US13",
+    "arguments": [
+      "report",
+      "US13",
+      "--continent",
+      "Asia",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US14",
+    "arguments": [
+      "report",
+      "US14",
+      "--region",
+      "Eastern Asia",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US15",
+    "arguments": [
+      "report",
+      "US15",
+      "--country",
+      "JPN",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US16",
+    "arguments": [
+      "report",
+      "US16",
+      "--district",
+      "Tokyo-to",
+      "--country",
+      "JPN",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US17",
+    "arguments": [
+      "report",
+      "US17"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US18",
+    "arguments": [
+      "report",
+      "US18",
+      "--continent",
+      "Asia"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US19",
+    "arguments": [
+      "report",
+      "US19",
+      "--region",
+      "Eastern Asia"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US20",
+    "arguments": [
+      "report",
+      "US20",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US21",
+    "arguments": [
+      "report",
+      "US21",
+      "--continent",
+      "Asia",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US22",
+    "arguments": [
+      "report",
+      "US22",
+      "--region",
+      "Eastern Asia",
+      "--top",
+      "3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US23",
+    "arguments": [
+      "report",
+      "US23"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US24",
+    "arguments": [
+      "report",
+      "US24"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US25",
+    "arguments": [
+      "report",
+      "US25"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US26",
+    "arguments": [
+      "report",
+      "US26"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US27",
+    "arguments": [
+      "report",
+      "US27",
+      "--continent",
+      "Asia"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US28",
+    "arguments": [
+      "report",
+      "US28",
+      "--region",
+      "Eastern Asia"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US29",
+    "arguments": [
+      "report",
+      "US29",
+      "--country",
+      "JPN"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US30",
+    "arguments": [
+      "report",
+      "US30",
+      "--district",
+      "Tokyo-to",
+      "--country",
+      "JPN"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US31",
+    "arguments": [
+      "report",
+      "US31",
+      "--city-id",
+      "1532"
+    ],
+    "exit_code": 0
+  },
+  {
+    "requirement": "US32",
+    "arguments": [
+      "report",
+      "US32"
+    ],
+    "exit_code": 0
+  }
+]
