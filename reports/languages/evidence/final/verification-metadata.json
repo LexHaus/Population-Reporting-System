@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-15",
+  "source_commit": "af8357024c650cf4ee69cc04eded579676a1a501",
+  "deployment": "fresh Docker Compose project and volume",
+  "mysql": "8.4.11",
+  "java_tests": 9,
+  "java_skipped": 0,
+  "python_tests": 6,
+  "language_report_exit_code": 0
+}

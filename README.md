@@ -47,12 +47,14 @@ US32 only; it is not a claim that all 32 assessment requirements are complete.
 
 | ID | Name | Met | Screenshot / evidence |
 |---|---|---|---|
-| US32 | Speakers of Chinese, English, Hindi, Spanish and Arabic, ordered by estimated speakers with world percentages | Yes | [Java output screenshot](reports/languages/evidence/java-report.jpg), [Docker/MySQL output](reports/languages/evidence/docker-mysql-output.txt) |
+| US32 | Speakers of Chinese, English, Hindi, Spanish and Arabic, ordered by estimated speakers with world percentages | Yes | [Final Docker output screenshot](reports/languages/evidence/final/language-report.jpg), [deployment and tests](reports/languages/evidence/final/deployment-verification.jpg), [verification details](reports/languages/evidence/final/README.md) |
 
-Verified on 13 October 2026 with Java 17 in Docker and MySQL 8.4.11. The screenshot
-shows actual Java stdout presented in a browser during the earlier MariaDB run;
-the final Docker/MySQL run produced exactly the same output. Six calculation
-tests, two formatting tests and one JDBC integration test passed.
+Verified again on 15 November 2026 from a fresh Docker Compose database volume,
+using the Java 17 application container and MySQL 8.4.11. Nine Java tests passed
+with no skips, including language and city JDBC integration tests; six Python
+calculation tests also passed. LanguageReport line coverage is 100% (20/20),
+with 87.5% branch coverage (7/8). The screenshots display captured command output
+in an explicitly labelled evidence viewer and the actual JaCoCo report.
 
 See [application setup](Population-Reporting-System/README.md) and
 [language report instructions](reports/languages/README.md). City report SQL and
