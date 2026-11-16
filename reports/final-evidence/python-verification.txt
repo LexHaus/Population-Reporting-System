@@ -1,0 +1,11 @@
+test_empty_world_has_undefined_percentage (test_report.LanguageReportTest.test_empty_world_has_undefined_percentage) ... ok
+test_fractional_estimates_not_rounded_per_country (test_report.LanguageReportTest.test_fractional_estimates_not_rounded_per_country) ... ok
+test_missing_language_still_has_zero_row (test_report.LanguageReportTest.test_missing_language_still_has_zero_row) ... ok
+test_ties_use_alphabetical_order (test_report.LanguageReportTest.test_ties_use_alphabetical_order) ... ok
+test_totals_filter_order_and_world_denominator (test_report.LanguageReportTest.test_totals_filter_order_and_world_denominator) ... ok
+test_zero_world_population (test_report.LanguageReportTest.test_zero_world_population) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK

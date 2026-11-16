@@ -44,25 +44,62 @@ The project follows GitFlow with
 
 ## Verified assessment evidence
 
-The language-report requirement is verified in this release. This table covers
-US32 only; it is not a claim that all 32 assessment requirements are complete.
+**32 requirements of 32 have been implemented and verified, which is 100%.**
+This refers to the 32 functional report requirements, not the overall coursework
+mark or completion of every submission task.
 
-| ID | Name | Met | Screenshot / evidence |
+Verified on 15 November 2026 using source commit
+`105ac1c30a918e1852a1044f46e3f7b31bd36a19` merged into `develop` via
+[PR #39](https://github.com/LexHaus/Population-Reporting-System/pull/39).
+The [post-merge GitHub Actions run passed](https://github.com/LexHaus/Population-Reporting-System/actions/runs/43786628256).
+All 48 Java tests passed without skips; all 32 report commands ran successfully
+in a Java 17 Docker image against a fresh MySQL 8.4.11 World database.
+
+Screenshots below are browser captures of clearly labelled viewers of actual
+Docker stdout. Tab-separated columns are formatted as tables; long results show
+the first 12 rows and link to complete unmodified stdout. These are evidence
+viewers, not an application web interface. Names and Top N are supplied as command
+arguments. See the [evidence pack](reports/final-evidence/README.md) for exact
+commands, provenance, logs and checksums.
+
+| ID | Name | Met | Screenshot |
 |---|---|---|---|
-| US32 | Speakers of Chinese, English, Hindi, Spanish and Arabic, ordered by estimated speakers with world percentages | Yes | [Final Docker output screenshot](reports/languages/evidence/final/language-report.jpg), [deployment and tests](reports/languages/evidence/final/deployment-verification.jpg), [verification details](reports/languages/evidence/final/README.md) |
+| US01 | All countries worldwide | Yes | <a href="reports/final-evidence/screenshots/US01.jpg"><img src="reports/final-evidence/screenshots/US01.jpg" width="300" alt="US01 verified report output"></a> · [Full output](reports/final-evidence/raw/US01.txt) |
+| US02 | All countries in a continent | Yes | <a href="reports/final-evidence/screenshots/US02.jpg"><img src="reports/final-evidence/screenshots/US02.jpg" width="300" alt="US02 verified report output"></a> · [Full output](reports/final-evidence/raw/US02.txt) |
+| US03 | All countries in a region | Yes | <a href="reports/final-evidence/screenshots/US03.jpg"><img src="reports/final-evidence/screenshots/US03.jpg" width="300" alt="US03 verified report output"></a> · [Full output](reports/final-evidence/raw/US03.txt) |
+| US04 | Top N countries worldwide | Yes | <a href="reports/final-evidence/screenshots/US04.jpg"><img src="reports/final-evidence/screenshots/US04.jpg" width="300" alt="US04 verified report output"></a> · [Full output](reports/final-evidence/raw/US04.txt) |
+| US05 | Top N countries in a continent | Yes | <a href="reports/final-evidence/screenshots/US05.jpg"><img src="reports/final-evidence/screenshots/US05.jpg" width="300" alt="US05 verified report output"></a> · [Full output](reports/final-evidence/raw/US05.txt) |
+| US06 | Top N countries in a region | Yes | <a href="reports/final-evidence/screenshots/US06.jpg"><img src="reports/final-evidence/screenshots/US06.jpg" width="300" alt="US06 verified report output"></a> · [Full output](reports/final-evidence/raw/US06.txt) |
+| US07 | All cities worldwide | Yes | <a href="reports/final-evidence/screenshots/US07.jpg"><img src="reports/final-evidence/screenshots/US07.jpg" width="300" alt="US07 verified report output"></a> · [Full output](reports/final-evidence/raw/US07.txt) |
+| US08 | All cities in a continent | Yes | <a href="reports/final-evidence/screenshots/US08.jpg"><img src="reports/final-evidence/screenshots/US08.jpg" width="300" alt="US08 verified report output"></a> · [Full output](reports/final-evidence/raw/US08.txt) |
+| US09 | All cities in a region | Yes | <a href="reports/final-evidence/screenshots/US09.jpg"><img src="reports/final-evidence/screenshots/US09.jpg" width="300" alt="US09 verified report output"></a> · [Full output](reports/final-evidence/raw/US09.txt) |
+| US10 | All cities in a country | Yes | <a href="reports/final-evidence/screenshots/US10.jpg"><img src="reports/final-evidence/screenshots/US10.jpg" width="300" alt="US10 verified report output"></a> · [Full output](reports/final-evidence/raw/US10.txt) |
+| US11 | All cities in a district | Yes | <a href="reports/final-evidence/screenshots/US11.jpg"><img src="reports/final-evidence/screenshots/US11.jpg" width="300" alt="US11 verified report output"></a> · [Full output](reports/final-evidence/raw/US11.txt) |
+| US12 | Top N cities worldwide | Yes | <a href="reports/final-evidence/screenshots/US12.jpg"><img src="reports/final-evidence/screenshots/US12.jpg" width="300" alt="US12 verified report output"></a> · [Full output](reports/final-evidence/raw/US12.txt) |
+| US13 | Top N cities in a continent | Yes | <a href="reports/final-evidence/screenshots/US13.jpg"><img src="reports/final-evidence/screenshots/US13.jpg" width="300" alt="US13 verified report output"></a> · [Full output](reports/final-evidence/raw/US13.txt) |
+| US14 | Top N cities in a region | Yes | <a href="reports/final-evidence/screenshots/US14.jpg"><img src="reports/final-evidence/screenshots/US14.jpg" width="300" alt="US14 verified report output"></a> · [Full output](reports/final-evidence/raw/US14.txt) |
+| US15 | Top N cities in a country | Yes | <a href="reports/final-evidence/screenshots/US15.jpg"><img src="reports/final-evidence/screenshots/US15.jpg" width="300" alt="US15 verified report output"></a> · [Full output](reports/final-evidence/raw/US15.txt) |
+| US16 | Top N cities in a district | Yes | <a href="reports/final-evidence/screenshots/US16.jpg"><img src="reports/final-evidence/screenshots/US16.jpg" width="300" alt="US16 verified report output"></a> · [Full output](reports/final-evidence/raw/US16.txt) |
+| US17 | All capitals worldwide | Yes | <a href="reports/final-evidence/screenshots/US17.jpg"><img src="reports/final-evidence/screenshots/US17.jpg" width="300" alt="US17 verified report output"></a> · [Full output](reports/final-evidence/raw/US17.txt) |
+| US18 | All capitals in a continent | Yes | <a href="reports/final-evidence/screenshots/US18.jpg"><img src="reports/final-evidence/screenshots/US18.jpg" width="300" alt="US18 verified report output"></a> · [Full output](reports/final-evidence/raw/US18.txt) |
+| US19 | All capitals in a region | Yes | <a href="reports/final-evidence/screenshots/US19.jpg"><img src="reports/final-evidence/screenshots/US19.jpg" width="300" alt="US19 verified report output"></a> · [Full output](reports/final-evidence/raw/US19.txt) |
+| US20 | Top N capitals worldwide | Yes | <a href="reports/final-evidence/screenshots/US20.jpg"><img src="reports/final-evidence/screenshots/US20.jpg" width="300" alt="US20 verified report output"></a> · [Full output](reports/final-evidence/raw/US20.txt) |
+| US21 | Top N capitals in a continent | Yes | <a href="reports/final-evidence/screenshots/US21.jpg"><img src="reports/final-evidence/screenshots/US21.jpg" width="300" alt="US21 verified report output"></a> · [Full output](reports/final-evidence/raw/US21.txt) |
+| US22 | Top N capitals in a region | Yes | <a href="reports/final-evidence/screenshots/US22.jpg"><img src="reports/final-evidence/screenshots/US22.jpg" width="300" alt="US22 verified report output"></a> · [Full output](reports/final-evidence/raw/US22.txt) |
+| US23 | Population inside/outside cities by continent | Yes | <a href="reports/final-evidence/screenshots/US23.jpg"><img src="reports/final-evidence/screenshots/US23.jpg" width="300" alt="US23 verified report output"></a> · [Full output](reports/final-evidence/raw/US23.txt) |
+| US24 | Population inside/outside cities by region | Yes | <a href="reports/final-evidence/screenshots/US24.jpg"><img src="reports/final-evidence/screenshots/US24.jpg" width="300" alt="US24 verified report output"></a> · [Full output](reports/final-evidence/raw/US24.txt) |
+| US25 | Population inside/outside cities by country | Yes | <a href="reports/final-evidence/screenshots/US25.jpg"><img src="reports/final-evidence/screenshots/US25.jpg" width="300" alt="US25 verified report output"></a> · [Full output](reports/final-evidence/raw/US25.txt) |
+| US26 | World population | Yes | <a href="reports/final-evidence/screenshots/US26.jpg"><img src="reports/final-evidence/screenshots/US26.jpg" width="300" alt="US26 verified report output"></a> · [Full output](reports/final-evidence/raw/US26.txt) |
+| US27 | Continent population | Yes | <a href="reports/final-evidence/screenshots/US27.jpg"><img src="reports/final-evidence/screenshots/US27.jpg" width="300" alt="US27 verified report output"></a> · [Full output](reports/final-evidence/raw/US27.txt) |
+| US28 | Region population | Yes | <a href="reports/final-evidence/screenshots/US28.jpg"><img src="reports/final-evidence/screenshots/US28.jpg" width="300" alt="US28 verified report output"></a> · [Full output](reports/final-evidence/raw/US28.txt) |
+| US29 | Country population | Yes | <a href="reports/final-evidence/screenshots/US29.jpg"><img src="reports/final-evidence/screenshots/US29.jpg" width="300" alt="US29 verified report output"></a> · [Full output](reports/final-evidence/raw/US29.txt) |
+| US30 | District population | Yes | <a href="reports/final-evidence/screenshots/US30.jpg"><img src="reports/final-evidence/screenshots/US30.jpg" width="300" alt="US30 verified report output"></a> · [Full output](reports/final-evidence/raw/US30.txt) |
+| US31 | City population | Yes | <a href="reports/final-evidence/screenshots/US31.jpg"><img src="reports/final-evidence/screenshots/US31.jpg" width="300" alt="US31 verified report output"></a> · [Full output](reports/final-evidence/raw/US31.txt) |
+| US32 | Language speakers and world percentages | Yes | <a href="reports/final-evidence/screenshots/US32.jpg"><img src="reports/final-evidence/screenshots/US32.jpg" width="300" alt="US32 verified report output"></a> · [Full output](reports/final-evidence/raw/US32.txt) |
 
-Verified again on 15 November 2026 from a fresh Docker Compose database volume,
-using the Java 17 application container and MySQL 8.4.11. Nine Java tests passed
-with no skips, including language and city JDBC integration tests; six Python
-calculation tests also passed. LanguageReport line coverage is 100% (20/20),
-with 87.5% branch coverage (7/8). The screenshots display captured command output
-in an explicitly labelled evidence viewer and the actual JaCoCo report.
-
-See [application setup](Population-Reporting-System/README.md) and
-[language report instructions](reports/languages/README.md). All 32 report commands are now implemented and exercised in local MySQL/Docker
-verification (see the report mapping above). The US32 screenshots below remain
-the recorded language evidence; screenshots for the other requirements and the
-final assessed release still need preparation.
+The assessed `master` release still needs to be prepared from the verified work.
+These screenshots do not establish that Moodle submission, contribution records,
+or the other Part 2 checklist items are complete.
 
 ## Automated build and tests
 
@@ -70,7 +107,7 @@ final assessed release still need preparation.
  runs on pushes and pull requests. It starts MySQL with the supplied World data,
  runs the six Python calculation tests and Maven's unit and JDBC integration tests,
  builds the executable JAR, and builds the Docker image on Linux using `Dockerfile`.
- It then runs the country, city and language reports inside Docker.
+ It then runs all 32 report commands inside Docker.
 
 Open a workflow run to see each step and download `build-and-test-evidence`,
 which contains the JAR, Maven test results and report output. A successful run is

@@ -116,5 +116,6 @@ python3 .github/scripts/report_smoke.py --image population-reporting-system:ci -
 
 The script defaults to host networking for Linux CI. On Docker Desktop use
 `--network bridge`, `DB_HOST=host.docker.internal`, and the published database port.
-After merging, capture final screenshots for the newly completed requirements,
-review the completion table as a team and prepare the assessed `master` release.
+Final screenshots for all 32 requirements are now in the
+[assessment evidence pack](final-evidence/README.md). Review the completion table
+as a team and prepare the assessed `master` release.

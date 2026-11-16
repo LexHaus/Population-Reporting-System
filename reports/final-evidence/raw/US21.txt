@@ -1,0 +1,6 @@
+US21 — World sample dataset
+Name	Country	Population
+Seoul	South Korea	9981619
+Jakarta	Indonesia	9604900
+Tokyo	Japan	7980230
+Rows: 3

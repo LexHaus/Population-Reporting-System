@@ -1,0 +1,6 @@
+US13 — World sample dataset
+Name	Country	District	Population
+Mumbai (Bombay)	India	Maharashtra	10500000
+Seoul	South Korea	Seoul	9981619
+Shanghai	China	Shanghai	9696300
+Rows: 3

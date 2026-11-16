@@ -1,0 +1,4 @@
+US30 — World sample dataset
+Name	Country	Population
+Tokyo-to	Japan	11043967
+Rows: 1

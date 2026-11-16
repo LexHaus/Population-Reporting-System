@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-15",
+  "source_commit": "105ac1c30a918e1852a1044f46e3f7b31bd36a19",
+  "source_branch": "develop",
+  "merged_pr": 39,
+  "post_merge_workflow": "https://github.com/LexHaus/Population-Reporting-System/actions/runs/43786628256",
+  "java_tests": 48,
+  "java_skipped": 0,
+  "python_tests": 6,
+  "successful_docker_commands": 32,
+  "java_line_coverage": {
+    "covered": 201,
+    "total": 211,
+    "percentage": 95.3
+  },
+  "application_image": "sha256:3ad2ed6950f15cf3aeb6612d7bd77ad7365122564c876feb98facd7678c70d80",
+  "mysql_image": "sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70",
+  "mysql_version": "/usr/sbin/mysqld  Ver 8.4.11 for Linux on aarch64 (MySQL Community Server - GPL)",
+  "java_version": "openjdk version \"17.0.21\" 2026-10-20\nOpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)\nOpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode, sharing)",
+  "viewer_note": "Screenshots show labelled evidence viewers of actual Docker stdout, with first 12 rows for long outputs."
+}
