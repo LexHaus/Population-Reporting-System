@@ -340,3 +340,11 @@ The report will display the following columns:
 `name | country | district | population`
 
 The results contain the Top N cities in the selected district ordered by population from largest to smallest.
+
+
+## User-selected filters and Top N
+
+The application now supports explicit input, for example:
+`docker compose run --rm app report US16 --district "California" --country USA --top 3`.
+See the [full command mapping](../README.md). Existing `cities USxx` demo commands
+retain their previous fixed sample settings for compatibility.

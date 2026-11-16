@@ -59,16 +59,12 @@ jobs:
           PYCODE
       - name: Build Docker image using default Dockerfile name
         run: docker build --tag population-reporting-system:ci .
-      - name: Run country, city and language reports in Docker
-        run: |
-          mkdir -p target/report-evidence
-          for report in countries cities languages; do
-            docker run --rm --network host \
-              -e DB_HOST=127.0.0.1 -e DB_PORT=3306 -e DB_NAME=world \
-              -e DB_USER -e DB_PASSWORD \
-              population-reporting-system:ci "$report" | tee "target/report-evidence/$report.txt"
-            test -s "target/report-evidence/$report.txt"
-          done
+      - name: Run all 32 report requirements in Docker
+        env:
+          DB_HOST: 127.0.0.1
+          DB_PORT: '3306'
+          DB_NAME: world
+        run: python3 ../.github/scripts/report_smoke.py --image population-reporting-system:ci --output target/report-evidence
       - name: Upload JAR, test results and report evidence
         if: always()
         uses: actions/upload-artifact@v4

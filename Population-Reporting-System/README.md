@@ -24,3 +24,12 @@ City reports are also available: run `docker compose run --rm app cities US12`
 after rebuilding the app image. `cities` defaults to the worldwide Top 10;
 US07 through US16 select the existing city queries. See
 [city report instructions](../reports/cities/README.md) for filters and Java usage.
+
+
+## Complete report commands
+
+All 32 report commands are available through `report USxx` with named options.
+For example, `docker compose run --rm app report US05 --continent "Europe" --top 7`
+shows seven countries, including all required country columns. Run
+`docker compose run --rm app --help` for usage and see the
+[complete report mapping](../reports/README.md) for every command.

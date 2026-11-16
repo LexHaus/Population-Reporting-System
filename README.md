@@ -10,6 +10,8 @@ SET9803 DevOps Group Project Assessment
 
 ## Reports
 
+- [All 32 report commands, input options and verification output](reports/README.md)
+
 - [System use-case diagram and requirement mapping](use-cases/README.md)
 
 - [Language report: query, user story and test instructions](reports/languages/README.md)
@@ -57,9 +59,10 @@ with 87.5% branch coverage (7/8). The screenshots display captured command outpu
 in an explicitly labelled evidence viewer and the actual JaCoCo report.
 
 See [application setup](Population-Reporting-System/README.md) and
-[language report instructions](reports/languages/README.md). City report SQL and
-documentation are also included; this release does not claim their Java integration
-or completion of the whole assessment.
+[language report instructions](reports/languages/README.md). All 32 report commands are now implemented and exercised in local MySQL/Docker
+verification (see the report mapping above). The US32 screenshots below remain
+the recorded language evidence; screenshots for the other requirements and the
+final assessed release still need preparation.
 
 ## Automated build and tests
 
@@ -92,3 +95,11 @@ and passes there. Until then the coverage badge may show unavailable. The
 `master-source.json` file on the badge branch records the measured commit, and
 `jacoco.xml` contains the underlying coverage counters. Download
 `build-and-test-evidence` from the matching run for the full HTML report.
+
+### Report implementation verification
+
+The report-completion implementation adds the missing country, capital-city and
+population reports and accepts user-selected locations/Top N for city reports.
+Local verification: 48 Java tests passed without skips, all 32 packaged report
+commands succeeded in Docker, and Java line coverage was 95.3% (201/211 lines).
+See [report verification](reports/README.md) for commands and raw output.

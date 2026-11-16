@@ -1,0 +1,6 @@
+US15 — World sample dataset
+Name	Country	District	Population
+Tokyo	Japan	Tokyo-to	7980230
+Jokohama [Yokohama]	Japan	Kanagawa	3339594
+Osaka	Japan	Osaka	2595674
+Rows: 3
